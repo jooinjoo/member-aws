@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/members/v1")
@@ -33,5 +35,10 @@ public class MemberController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteMember(@PathVariable Long id) {
         return ResponseEntity.ok(memberService.deleteMember(id));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<MemberResponse>> getAllMembers() {
+        return ResponseEntity.ok(memberService.readAllMembers());
     }
 }
