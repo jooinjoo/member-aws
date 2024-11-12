@@ -20,6 +20,7 @@ public class MemberResponse {
 
     public static MemberResponse from(Member member) {
         return MemberResponse.builder()
+                .id(member.getId())
                 .email(member.getEmail())
                 .password(member.getPassword())
                 .name(member.getName())
