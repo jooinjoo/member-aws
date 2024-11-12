@@ -2,12 +2,13 @@ package com.grepp.memberaws;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
 
 @SpringBootTest
-class MemberAwsApplicationTests {
+@TestPropertySource(locations = "classpath:/application-test.properties")
+public class DemoApplicationTests {
 
     @Test
     void contextLoads() {
     }
-
 }
